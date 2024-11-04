@@ -160,11 +160,11 @@ var cnip = ''
 
 function ipcn() {
     if (visibl) {
-        fetch('https://forge.speedtest.cn/api/location/info', { referrerPolicy: 'no-referrer' })
+        fetch('http://ip.360.cn/IPShare/info', { referrerPolicy: 'no-referrer' })
             .then(response => response.json())
             .then(data => {
                 var tag = document.getElementById("ipcn")
-                tag.innerText = data['ip'] + ' ' + data['province'] + ' ' + data['city'] + ' ' + data['distinct'] + ' ' + data['isp']
+                tag.innerText = data['ip'] + ' ' + data['location']
                 if (data['ip'] !== cnip) {
                     tag.style.color = ''
                     ckip(data['ip'], tag)
