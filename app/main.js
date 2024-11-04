@@ -160,11 +160,11 @@ var cnip = ''
 
 function ipcn() {
     if (visibl) {
-        fetch('http://ip.360.cn/IPShare/info', { referrerPolicy: 'no-referrer' })
+        fetch('https://www.ip.cn/api/index?ip=&type=0', { referrerPolicy: 'no-referrer' })
             .then(response => response.json())
             .then(data => {
                 var tag = document.getElementById("ipcn")
-                tag.innerText = data['ip'] + ' ' + data['location']
+                tag.innerText = data['ip'] + ' ' + data['address']
                 if (data['ip'] !== cnip) {
                     tag.style.color = ''
                     ckip(data['ip'], tag)
