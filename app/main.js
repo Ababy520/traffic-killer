@@ -334,14 +334,6 @@ option = {
             type: 'line',
             data: [{
                 name: new Date(),
-                value: now_local_ping
-            }]
-        },
-        {
-            name: '延迟',
-            type: 'line',
-            data: [{
-                name: new Date(),
                 value: now_global_ping
             }]
         }
