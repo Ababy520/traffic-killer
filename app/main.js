@@ -167,7 +167,7 @@ function ipcn() {
                 tag.innerText = data['remote_addr'] + ' ' + data['remote_addr_location']['province']
                 if (data['remote_addr'] !== cnip) {
                     tag.style.color = ''
-                    ckip(data['ip'], tag)
+                    ckip(data['remote_addr'], tag)
                 }
                 cnip = data['remote_addr'];
             });
