@@ -160,16 +160,16 @@ var cnip = ''
 
 function ipcn() {
     if (visibl) {
-        fetch('https://www.ip.cn/api/index?ip=&type=0', { referrerPolicy: 'no-referrer' })
+        fetch('https://pubstatic.b0.upaiyun.com/?_upnode', { referrerPolicy: 'no-referrer' })
             .then(response => response.json())
             .then(data => {
                 var tag = document.getElementById("ipcn")
-                tag.innerText = data['ip'] + ' ' + data['address']
-                if (data['ip'] !== cnip) {
+                tag.innerText = data['remote_addr'] + ' ' + data['remote_addr_location']
+                if (data['remote_addr'] !== cnip) {
                     tag.style.color = ''
                     ckip(data['ip'], tag)
                 }
-                cnip = data['ip'];
+                cnip = data['remote_addr'];
             });
     }
     setTimeout(ipcn, 5000)
