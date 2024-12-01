@@ -172,7 +172,7 @@ function ipcn() {
                 cnip = data['remote_addr'];
             });
     }
-    setTimeout(ipcn, refresh_lay)
+    setTimeout(ipcn, 5000)
 }
 var gbip = ""
 
