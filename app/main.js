@@ -172,7 +172,7 @@ function ipcn() {
                 cnip = data['remote_addr'];
             });
     }
-    setTimeout(ipcn, 5000)
+    setTimeout(ipcn, refresh_lay)
 }
 var gbip = ""
 
@@ -182,7 +182,7 @@ function ipgb() {
             .then(response => response.json())
             .then(data => {
                 var tag = document.getElementById("ipgb")
-                tag.innerText = data['ip'] + ' ' + CountryCode_Zh_cn[data['country_code']] + ' ' + CountryCode_Zh_cn[data['isp']]
+                tag.innerText = data['ip'] + ' ' + CountryCode_Zh_cn[data['country_code']] + ' ' + data['isp']
                 if (data['ip'] !== gbip) {
                     tag.style.color = ''
                     ckip(data['ip'], tag)
